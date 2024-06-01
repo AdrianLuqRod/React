@@ -5,7 +5,13 @@ import { TwtitterFollowCard } from "./TwitterFollowCard";
 export function App(): JSX.Element {
   return (
     <React.Fragment>
-      <TwtitterFollowCard userName="midudev" name="Miguel Ángel Durán" />;
+      <div className = "mar">
+      <TwtitterFollowCard userName="elrubiusomg" name="Rubén" platform = "youtube" />
+      <TwtitterFollowCard userName="RobertDowneyJr" name="Robert" platform = "twitter" />
+      <TwtitterFollowCard userName="jordialemany" name="Jordi" platform = "twitter" />
+      </div>
     </React.Fragment>
   );
 }
+
+

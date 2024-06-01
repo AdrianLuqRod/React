@@ -1,6 +1,7 @@
 type TwitterFollowCardProps = {
   userName: string;
   name: string;
+  platform: string;
 };
 
 export function TwtitterFollowCard(
@@ -11,7 +12,7 @@ export function TwtitterFollowCard(
       <header className="tw-followCard-header">
         <img
           className="tw-followCard-avatar"
-          src={`https://unavatar.io/${arg.name}`}
+          src={`https://unavatar.io/${arg.platform}/${arg.userName}`}
           alt="avatar_midudev"
         />
         <div className="followCard-info">
@@ -25,3 +26,5 @@ export function TwtitterFollowCard(
     </article>
   );
 }
+
+

@@ -2,6 +2,9 @@ type TwitterFollowCardProps = {
   userName: string;
   name: string;
   platform: string;
+  isFollowing?: boolean;
+  formatUserName: (userName: string) => string;
+  children?: React.ReactNode;
 };
 
 export function TwtitterFollowCard(
@@ -18,7 +21,9 @@ export function TwtitterFollowCard(
         <div className="followCard-info">
           <strong>{arg.name}</strong>
         </div>
-        <span className="tw-followCard-infoUserName">@{arg.userName}</span>
+        <span className="tw-followCard-infoUserName">
+          {arg.formatUserName(arg.userName)}
+        </span>
       </header>
       <aside>
         <button className="tw-followCard-button">Seguir</button>
@@ -26,5 +31,3 @@ export function TwtitterFollowCard(
     </article>
   );
 }
-
-

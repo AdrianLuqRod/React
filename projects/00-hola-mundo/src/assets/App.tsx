@@ -3,15 +3,32 @@ import "./App.css";
 import { TwtitterFollowCard } from "./TwitterFollowCard";
 
 export function App(): JSX.Element {
+  const formatUserName = (userName: string) => `@${userName.toLowerCase()}`;
   return (
-    <React.Fragment>
-      <div className = "mar">
-      <TwtitterFollowCard userName="elrubiusomg" name="Rubén" platform = "youtube" />
-      <TwtitterFollowCard userName="RobertDowneyJr" name="Robert" platform = "twitter" />
-      <TwtitterFollowCard userName="jordialemany" name="Jordi" platform = "twitter" />
-      </div>
-    </React.Fragment>
+    <section className="Mar">
+      <TwtitterFollowCard
+        formatUserName={formatUserName}
+        isFollowing
+        userName="ELRUBIUSOMG"
+        name="Rubén"
+        platform="youtube"
+      />
+
+      <TwtitterFollowCard
+        formatUserName={formatUserName}
+        isFollowing={false}
+        userName="RobertDowneyJr"
+        name="Robert"
+        platform="twitter"
+      />
+
+      <TwtitterFollowCard
+        formatUserName={formatUserName}
+        isFollowing
+        userName="JordiALEMANY"
+        name="Jordi"
+        platform="twitter"
+      />
+    </section>
   );
 }
-
-

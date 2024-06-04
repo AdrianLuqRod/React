@@ -1,8 +1,9 @@
+import React, { useState } from "react";
+
 type TwitterFollowCardProps = {
   userName: string;
   name: string;
   platform: string;
-  isFollowing?: boolean;
   formatUserName: (userName: string) => string;
   children?: React.ReactNode;
 };
@@ -10,6 +11,21 @@ type TwitterFollowCardProps = {
 export function TwtitterFollowCard(
   arg: TwitterFollowCardProps
 ): React.ReactElement {
+  const [isFollowing, setIsFollowing]: [
+    boolean,
+    React.Dispatch<React.SetStateAction<boolean>>
+  ] = useState(false);
+
+  const text: string = isFollowing ? "Siguiendo" : "Seguir";
+
+  const buttonClassName: string = isFollowing
+    ? "tw-followCard-button isFollowing"
+    : "tw-followCard-button";
+
+  const handleClick: () => void = () => {
+    setIsFollowing(!isFollowing);
+  };
+
   return (
     <article className="tw-followCard">
       <header className="tw-followCard-header">
@@ -26,7 +42,9 @@ export function TwtitterFollowCard(
         </span>
       </header>
       <aside>
-        <button className="tw-followCard-button">Seguir</button>
+        <button className={buttonClassName} onClick={handleClick}>
+          {text}
+        </button>
       </aside>
     </article>
   );

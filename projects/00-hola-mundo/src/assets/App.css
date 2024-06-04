@@ -11,14 +11,13 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  padding-right:1em;
+  padding-right: 1em;
 }
 
 .tw-followCard-avatar {
   width: 48px;
   height: 48px;
   border-radius: 1000px;
-  
 }
 
 .tw-followCard-info {
@@ -31,14 +30,28 @@
 }
 
 .tw-followCard-button {
-  border-radius: 999px;
+  border: 1px #000000 solid;
+  border-radius: 30px;
   padding: 6px 16px;
   font-weight: bold;
   cursor: pointer;
+  transition: 0.3s ease background-color;
 }
 
+.tw-followCard-button:hover {
+  background-color: #0066ff;
+}
 
-.Mar{
+.tw-followCard-button.isFollowing {
+  background-color: #000000;
+  color: #fff;
+}
+
+.tw-followCard-button.isFollowing:hover {
+  background-color: rgb(255, 0, 0);
+}
+
+.Mar {
   display: flex;
   flex-direction: column;
   gap: 8px;
